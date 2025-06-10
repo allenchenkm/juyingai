@@ -1,0 +1,44 @@
+.base-user-tab{
+    background:var(--bg-input);
+    display:grid;
+    grid-template-columns:repeat(var(--053ccabb),1fr)
+	
+}
+.base-user-tab .tab-item{
+    width:100%;
+    position:relative
+}
+.base-user-tab .tab-item.active{
+    background:var(--bg-weight)
+}
+[v-cloak] {
+     display: none !important;
+}
+.newkefu{position:fixed;right:10px;top:50%;margin-top:-25px}
+
+/* 下载弹窗样式 */
+.download-modal {
+    /* 移除所有复杂样式，保持简洁 */
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+    .download-modal {
+        width: 90% !important;
+        max-width: 400px !important;
+        margin: 20px;
+    }
+    
+    .download-modal .p-8 {
+        padding: 1.5rem !important;
+    }
+    
+    .download-modal .gap-8 {
+        gap: 1.5rem !important;
+    }
+    
+    .download-modal canvas {
+        width: 120px !important;
+        height: 120px !important;
+    }
+}

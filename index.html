@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="zh-TW" translate="no" style="--tg-viewport-height: 100vh; --tg-viewport-stable-height: 100vh; --vh: 9.19px; --primary: rgb(67,74,244); --bg: #11121c; --bg-gray: #282454; --btn-text: #fff; --btn-text-hover: #fff; --bg-input: #2d2565; --btn-bg: rgb(67,74,244); --bg-card: var(--primary); --bg-header: transparent; --text-gray: #909093; --tab-text: #fff; --border-color: #343434; --placeholder: transparent; --base-menu-radius: 8px;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>JUYING AI</title>
+<link rel="stylesheet" type="text/css" href="./static/index-C-bjee8C.css">
+<link rel="stylesheet" type="text/css" href="./static/index-D7On8RN3.css">
+<link rel="stylesheet" type="text/css" href="./static/index-DV4PTRCa.css">
+<link rel="stylesheet" type="text/css" href="./static/BaseUserTab-CoXQ0X_V.css">
+<script src="./static/jquery-1.9.1.min.js"></script>
+<script src="./static/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script>
+//链接跳转 type值1显示下载弹窗，2跳转到APP下载
+function goLink(type){
+	if(type==1){
+		// 显示下载弹窗
+		if(window.app && window.app.openDownloadModal) {
+			window.app.openDownloadModal();
+		}
+	}
+	if(type==2){location.href='b.html'}
+}
+
+// 生成二维码
+function generateQRCode(text, elementId) {
+    const canvas = document.getElementById(elementId);
+    if (canvas) {
+        QRCode.toCanvas(canvas, text, {
+            width: 140,
+            height: 140,
+            margin: 1,
+            color: {
+                dark: '#000000',
+                light: '#FFFFFF'
+            }
+        }, function (error) {
+            if (error) console.error('二维码生成失败:', error);
+        });
+    }
+}
+</script>
+</head>
+<body class="">
+	<div id="app" data-v-app="" class="a-t-4 no-1" @click="showKefu=false" v-cloak>
+		<!---->
+		<!---->
+		<!---->
+		<header class="fixed top-0 z-[40] h-[61px] w-full sm:h-[10px]" style="background:var(--bg);">
+			<nav class="top-0 hidden h-[75px] w-full items-center bg-auto bg-center bg-no-repeat transition lg:flex" aria-label="Top" style="background:var(--bg);">
+				<div class="mx-auto max-w-[1171px] w-full flex items-center justify-between">
+					<div class="ml-6 w-full xl:ml-0">
+						<a data-href="app" class="router-link-active router-link-exact-active flex items-center gap-x-3 text-2xl font-bold linkA" aria-current="page">
+							<img src="./images/logo.png" alt="logo" class="h-[41px] w-[41px]">JUYING AI
+						</a>
+					</div>
+					<div class="min-w-fit w-full flex space-x-10 newNav">
+						<a data-href="app" class="router-link-active router-link-exact-active relative flex justify-center rd-full px-4 py-2 text-18px text-$text-gray font-bold transition hover:text-$btn-text-hover bg-$primary linkA"
+						aria-current="page">
+							首页
+						</a>
+						<a data-href="features" class="router-link-active router-link-exact-active relative flex justify-center rd-full px-4 py-2 text-18px text-$text-gray font-bold transition hover:text-$btn-text-hover linkA"
+						aria-current="page">
+							功能
+						</a>
+						<a data-href="how-to-start" class="router-link-active router-link-exact-active relative flex justify-center rd-full px-4 py-2 text-18px text-$text-gray font-bold transition hover:text-$btn-text-hover linkA"
+						aria-current="page">
+							如何开始
+						</a>
+						<a data-href="plans" class="router-link-active router-link-exact-active relative flex justify-center rd-full px-4 py-2 text-18px text-$text-gray font-bold transition hover:text-$btn-text-hover linkA"
+						aria-current="page">
+							价格
+						</a>
+						<span class="van-popover__wrapper newMore">
+							<div class="group relative flex cursor-pointer justify-center rd-full px-4 py-2 text-18px text-$text-gray font-bold transition hover:text-$btn-text-hover">
+								<span>
+									更多
+								</span>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+								aria-hidden="true" class="ml-1 mt-0.5 h-5 w-5 group-hover:text-$btn-text-hover">
+									<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+									clip-rule="evenodd">
+									</path>
+								</svg>
+							</div>
+						</span>
+					</div>
+					<!--导航列表结束-->
+					<div class="mr-6 w-full flex items-center justify-end xl:mr-0">
+						<!--<div class="base-lang-wrap">
+							<div class="cursor-pointer">
+								<div class="mr-20px flex items-center text-$text-gray hover:text-$btn-text-hover">
+									<div class="i-majesticons:globe-grid-line mr-4px h-20px w-20px cursor-pointer transition"></div>
+									繁体中文
+								</div>
+							</div>
+						</div>-->
+						<a onclick="goLink(1)" class="max-w-full border border-$primary rounded-full bg-$primary px-28px py-12px text-center text-base text-white font-bold transition duration-300 hover:shadow-$primary/50 hover:shadow-md">
+							开始使用
+						</a>
+					</div>
+				</div>
+			</nav>
+			<nav class="fixed top-0 z-41 h-[61px] w-full flex items-center lg:hidden" aria-label="Top">
+				<div class="mx-4 my-2 w-full flex items-center justify-between bg-auto bg-center bg-no-repeat">
+					<div class="w-full">
+						<a href="#/" class="router-link-active router-link-exact-active flex items-center gap-x-3 text-xl font-bold"
+						aria-current="page">
+							<img src="./images/logo.png" alt="logo" class="h-[32px] w-[32px]">JUYING AI
+						</a>
+					</div>
+					<div class="w-full flex justify-end gap-x-4">
+						<!---->
+						<button class="h-[37px] w-[40px] flex items-center justify-center border border-$primary rounded-[8px] border-solid bg-$primary text-white transition"
+							@click="showPhoneNav=!showPhoneNav">
+							<div class="h-20px w-20px" :class="showPhoneNav?'i-ion:close-round':' i-tabler:menu-2'"></div>
+						</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!--PC头部结束-->
+		<div class="fixed inset-0 z-10 min-h-full flex flex-col justify-between overflow-hidden lg:hidden overflow-x-hidden overflow-y-auto bg-$bg z-20! overflow-x-hidden overflow-y-auto bg-$bg z-20!"
+			v-show="showPhoneNav">
+			<div class="mb-2 mt-20 flex flex-col px-4 text-white sm:mt-28 sm:px-8" @click="showPhoneNav=false">
+				<a data-href="app" aria-current="page" class="router-link-active router-link-exact-active group text-lg font-medium transition sm:text-2xl linkA none">
+					<span class="group-hover:text-$btn-text-hover">
+						首页
+					</span>
+					<div class="mb-8 mt-4 h-[1px] w-full bg-$btn-text transition group-hover:bg-$btn-text-hover"></div>
+				</a>
+				<a data-href="features" aria-current="page" class="router-link-active router-link-exact-active group text-lg font-medium transition sm:text-2xl linkA none">
+					<span class="group-hover:text-$btn-text-hover">
+						功能
+					</span>
+					<div class="mb-8 mt-4 h-[1px] w-full bg-$btn-text transition group-hover:bg-$btn-text-hover"></div>
+				</a>
+				<a data-href="how-to-start" aria-current="page" class="router-link-active router-link-exact-active group text-lg font-medium transition sm:text-2xl linkA none">
+					<span class="group-hover:text-$btn-text-hover">
+						如何开始
+					</span>
+					<div class="mb-8 mt-4 h-[1px] w-full bg-$btn-text transition group-hover:bg-$btn-text-hover"></div>
+				</a>
+				<a data-href="plans" aria-current="page" class="router-link-active router-link-exact-active group text-lg font-medium transition sm:text-2xl linkA none">
+					<span class="group-hover:text-$btn-text-hover">
+						价格
+					</span>
+					<div class="mb-8 mt-4 h-[1px] w-full bg-$btn-text transition group-hover:bg-$btn-text-hover"></div>
+				</a>
+				<a data-href="faq" aria-current="page" class="router-link-active router-link-exact-active group text-lg font-medium transition sm:text-2xl linkA none">
+					<span class="group-hover:text-$btn-text-hover">
+						常见问题
+					</span>
+					<div class="mb-8 mt-4 h-[1px] w-full bg-$btn-text transition group-hover:bg-$btn-text-hover"></div>
+				</a>
+				<a href="" class="group text-lg font-medium transition sm:text-2xl" target="_self">
+					<span class="group-hover:text-$btn-text-hover">
+						在线客服
+					</span>
+					<div class="mb-8 mt-4 h-[1px] w-full bg-$btn-text transition group-hover:bg-$btn-text-hover"></div>
+				</a>
+				<a href="" class="group text-lg font-medium transition sm:text-2xl" target="_blank">
+					<span class="group-hover:text-$btn-text-hover">
+						白书
+					</span>
+					<div class="mb-8 mt-4 h-[1px] w-full bg-$btn-text transition group-hover:bg-$btn-text-hover"></div>
+				</a>
+				<div onclick="goLink(2)" class="group text-lg font-medium transition sm:text-2xl" target="_blank">
+					<span class="group-hover:text-$btn-text-hover">
+						下载应用程式
+					</span>
+					<div class="mb-8 mt-4 h-[1px] w-full bg-$btn-text transition group-hover:bg-$btn-text-hover"></div>
+				</div>
+			</div>
+			<!--<div class="mb-5 flex flex-col gap-y-4 px-5 sm:mb-8 sm:px-8">
+				<div class="base-lang-wrap">
+					<div class="cursor-pointer">
+						<div class="w-full">
+							<button class="w-full flex items-center justify-center border border-$primary rounded-[8px] border-solid bg-transparent py-3 text-$primary transition hover:bg-$btn-text-hover hover:text-white">
+								<div class="i-ic:sharp-language mr-4px h-20px w-20px"></div>
+								<span>
+							繁体中文
+						</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>-->
+		</div>
+		<!--移动端头部-->
+		<main class="relative overflow-x-hidden">
+			<!---->
+			<!---->
+			<home></home>
+			<!---->
+			<footer data-v-335ea459="" class="float-start footer-total-01 w-100">
+				<div data-v-335ea459="" class="main-footer01 d-inline-block w-100 py-5">
+					<div data-v-335ea459="" class="container">
+						<div data-v-335ea459="" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-5">
+							<div data-v-335ea459="" class="col">
+								<div data-v-335ea459="" class="comon-footer-mns d-inline-block w-100">
+									<a data-v-335ea459="" href="#" class="foot-logo">
+										<img data-v-335ea459="" src="./images/logo.png" class="h-60px w-60px rd-full" alt="logo">
+									</a>
+									<p data-v-335ea459="" class="fo-text col-lg-11 mt-5">
+										JUYING AI
+									</p>
+								</div>
+							</div>
+						</div>
+						<hr data-v-335ea459="" class="mt-5">
+						<div data-v-335ea459="" class="d-sm-flex coply align-items-center justify-content-between">
+							<p data-v-335ea459="">
+								Copyright © JUYING AI
+							</p>
+							<ul data-v-335ea459="">
+								<li data-v-335ea459="">
+									<a data-href="app" aria-current="page" class="router-link-active router-link-exact-active linkA">
+										首页
+									</a>
+									<a data-href="features" data-v-335ea459="" href="#/#features" class="router-link-active router-link-exact-active linkA">
+										功能
+									</a>
+									<a data-href="plans" data-v-335ea459="" href="#/#plans" class="router-link-active router-link-exact-active linkA">
+										价格
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!---->
+			<!---->
+			<!---->
+		</main>
+		<!---->
+		<!---->
+		<!---->
+<!--		<div class="van-floating-bubble">-->
+<!--			<img class="h-auto w-50px rounded-full newkefu" src="./images/service-DfZIe89F.png" @click.stop="showKefu=true">-->
+<!--		</div>-->
+		<div role="dialog" tabindex="0" class="van-popup van-popup--round van-popup--center overflow-hidden" style="z-index: 2006; min-width: 300px;" v-show="showKefu">
+			<div class="m-10px h-full flex flex-col overflow-hidden a-t-4">
+				<div class="text-center text-lg text-#1d2129 font-bold">
+					线上服务
+				</div>
+				<div class="my-10px text-center text-sm text-#86909c">
+					选择您首选的线上客服联络方式 {{showPhoneNav}}
+				</div>
+				<ul class="mx-auto my-10px max-w-$maxWidth w-full flex-1 overflow-y-auto">
+					<a href="" style="display:block;">
+						<li class="mb-8px flex cursor-pointer items-center rounded-12px bg-#F7F8FA p-8px">
+							<img class="h-64px w-64px overflow-hidden rounded-12px" src="./images/tg.png">
+							<span class="ml-10px text-#1d2129">
+						baidu
+					</span>
+							<div class="i-ic-round-keyboard-arrow-right ml-auto text-20px text-#86909c"></div>
+						</li>
+					</a>
+				</ul>
+			</div>
+			<!---->
+		</div>
+
+		<!-- 下载弹窗 -->
+		<div v-show="showDownloadModal" class="fixed inset-0 flex items-center justify-center" style="z-index: 2005; background: rgba(0,0,0,0.8);" @click="showDownloadModal=false">
+			<div role="dialog" tabindex="0" class="download-modal" style="width: 520px; background: var(--bg-gray); border-radius: 16px; border: 1px solid rgba(67,74,244,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.5);" @click.stop="">
+				<div class="p-8">
+					<!-- 弹窗头部 -->
+					<div class="flex items-center justify-between mb-8">
+						<h2 class="text-xl text-white font-semibold">下载 JUYING AI</h2>
+						<button @click="showDownloadModal=false" class="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-200" style="color: rgb(67,74,244); background: rgba(67,74,244,0.1); border: 1px solid rgba(67,74,244,0.3);" onmouseover="this.style.background='rgba(67,74,244,0.2)'" onmouseout="this.style.background='rgba(67,74,244,0.1)'">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<line x1="18" y1="6" x2="6" y2="18"></line>
+								<line x1="6" y1="6" x2="18" y2="18"></line>
+							</svg>
+						</button>
+					</div>
+					
+					<!-- 描述文字 -->
+					<div class="text-center mb-8">
+						<p class="text-gray-300 text-sm">扫描二维码下载APP，开启您的智能投资之旅</p>
+					</div>
+					
+					<!-- 二维码区域 -->
+					<div class="grid grid-cols-2 gap-8 mb-8">
+						<!-- 安卓下载 -->
+						<div class="text-center">
+							<div class="bg-white p-4 rounded-lg mx-auto inline-block">
+								<img src="images/anzhuo.png" alt="安卓下载二维码" style="width: 140px; height: 140px;">
+							</div>
+							<div class="mt-3">
+								<div class="text-white text-sm font-medium">安卓版</div>
+								<div class="text-gray-400 text-xs">Android</div>
+							</div>
+						</div>
+						
+						<!-- iOS下载 -->
+						<div class="text-center">
+							<div class="bg-white p-4 rounded-lg mx-auto inline-block">
+								<img src="images/ios.png" alt="iOS下载二维码" style="width: 140px; height: 140px;">
+							</div>
+							<div class="mt-3">
+								<div class="text-white text-sm font-medium">苹果版</div>
+								<div class="text-gray-400 text-xs">App Store</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 下载按钮 -->
+					<div class="grid grid-cols-2 gap-4">
+						<a :href="androidUrl" target="_blank" class="bg-green-600 hover:bg-green-700 text-white text-center py-3 px-4 rounded-lg text-sm font-medium transition-all duration-200">
+							点击安卓下载
+						</a>
+						<a :href="iosUrl" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-4 rounded-lg text-sm font-medium transition-all duration-200">
+							点击iOS下载
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<div class="van-overlay" role="button" tabindex="0" style="z-index: 2006; display: none;">
+		<!---->
+	</div>
+	
+	<!---->
+	<!---->
+	<div data-v-app=""></div>
+	<!---->
+	<div role="dialog" tabindex="0" class="van-popup van-popup--center van-toast van-toast--middle van-toast--loading"
+	style="z-index: 2007; display: none;">
+		<div class="van-loading van-loading--circular van-toast__loading" aria-live="polite"
+		aria-busy="true">
+			<span class="van-loading__spinner van-loading__spinner--circular">
+				<svg class="van-loading__circular" viewBox="25 25 50 50">
+					<circle cx="50" cy="50" r="20" fill="none"></circle>
+				</svg>
+			</span>
+			<!----></div>
+		<!---->
+		<!----></div>
+	<!---->
+	<!---->
+	<!---->
+	<div role="dialog" tabindex="0" class="van-popup van-popover van-popover--light vant-pop1" style="z-index: 2005; position: fixed; top: 67px; margin: 0px;display: none"
+		 data-popper-placement="bottom">
+		<div class="van-popover__arrow"></div>
+		<div role="menu" class="van-popover__content van-popover__content--vertical">
+			<div class="relative grid gap-6 p-5">
+				<a data-href="faq" aria-current="page" class="router-link-active router-link-exact-active block rounded-md p-3 -m-3 linkA none" target="_self">
+					<p class="text-18px font-bold hover:text-$primary">
+						常见问题
+					</p>
+				</a>
+				<a href="" target="_blank" class="block rounded-md p-3 -m-3" target="_self">
+					<p class="text-18px font-bold hover:text-$primary">
+						在线客服
+					</p>
+				</a>
+				<a class="block rounded-md p-3 -m-3" target="_blank" href="">
+					<p class="text-18px font-bold hover:text-$primary">
+						白书
+					</p>
+				</a>
+			</div>
+		</div>
+		<!---->
+	</div>
+	<script src="./home.js"></script>
+	<script src="./fun.js"></script>
+</body>
+</html>
