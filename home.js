@@ -527,7 +527,9 @@ const homeTemp={
 									<a data-v-335ea459="" class="btn btn-more" onclick="goLink(1)">
 										开始使用
 									</a>
-
+									<button data-v-335ea459="" class="btn vi-more ms-3" onclick="goLink(2)">
+										应用程序
+									</button>
 								</div>
 							</div>
 						</div>

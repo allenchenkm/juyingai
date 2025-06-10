@@ -21,24 +21,65 @@
     /* 移除所有复杂样式，保持简洁 */
 }
 
-/* 移动端响应式 */
+/* 统一按钮样式 - 让应用程序按钮和开始使用按钮一样大 */
+.banner-part .vi-more[data-v-335ea459] {
+    padding: 12px 28px !important; /* 和btn-more保持一致 */
+    font-size: 16px !important; /* 和btn-more保持一致 */
+}
+
+/* 移动端按钮样式统一 */
 @media (max-width: 768px) {
+    .banner-part .vi-more[data-v-335ea459] {
+        padding: 12px 19px !important; /* 和移动端btn-more保持一致 */
+        font-size: 14px !important; /* 和移动端btn-more保持一致 */
+    }
+    
     .download-modal {
-        width: 90% !important;
-        max-width: 400px !important;
-        margin: 20px;
+        width: 95% !important;
+        max-width: 380px !important;
+        margin: 10px;
     }
     
     .download-modal .p-8 {
-        padding: 1.5rem !important;
+        padding: 1.2rem !important;
     }
     
     .download-modal .gap-8 {
-        gap: 1.5rem !important;
+        gap: 1rem !important;
     }
     
-    .download-modal canvas {
-        width: 120px !important;
-        height: 120px !important;
+    .download-modal .mb-8 {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* 二维码图片样式 */
+    .download-modal img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    /* 二维码容器白色背景 */
+    .download-modal .bg-white {
+        padding: 0.75rem !important;
+    }
+    
+    /* 按钮区域 */
+    .download-modal .grid-cols-2 {
+        gap: 0.75rem !important;
+    }
+    
+    .download-modal .py-3 {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    
+    /* 标题文字 */
+    .download-modal .text-xl {
+        font-size: 1.1rem !important;
+    }
+    
+    /* 描述文字 */
+    .download-modal .text-sm {
+        font-size: 0.8rem !important;
     }
 }
